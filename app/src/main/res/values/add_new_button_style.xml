@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="add_new_button_style">
+        <item name="cornerRadius">10sp</item>
+        <item name="cornerSize">50%</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="android:width">200sp</item>
+
+    </style>
+</resources>
+
+
+<!--<item name="cornerSizeTopRight">0dp</item>-->
