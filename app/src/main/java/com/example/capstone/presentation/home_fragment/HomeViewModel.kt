@@ -1,7 +1,7 @@
-package com.example.capstone.homeFragment
+package com.example.capstone.presentation.home_fragment
 
 import androidx.lifecycle.ViewModel
-import com.example.capstone.models.Memory
+import com.example.capstone.domain.models.Memory
 
 class HomeViewModel : ViewModel() {
 

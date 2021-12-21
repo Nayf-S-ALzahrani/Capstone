@@ -1,4 +1,4 @@
-package com.example.capstone.models
+package com.example.capstone.domain.models
 
 import java.util.*
 

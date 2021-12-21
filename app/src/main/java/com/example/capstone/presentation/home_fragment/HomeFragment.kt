@@ -1,4 +1,4 @@
-package com.example.capstone.homeFragment
+package com.example.capstone.presentation.home_fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.SnapHelper
 
 import com.example.capstone.databinding.HomeFragmentBinding
 import com.example.capstone.databinding.ImageListItemBinding
-import com.example.capstone.models.Memory
+import com.example.capstone.domain.models.Memory
 
 
 class HomeFragment : Fragment() {

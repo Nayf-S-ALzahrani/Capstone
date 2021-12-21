@@ -1,10 +1,11 @@
-package com.example.capstone
+package com.example.capstone.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.capstone.databinding.ActivityMainBinding
-import com.example.capstone.databinding.HomeFragmentBinding
+import com.example.capstone.R
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
