@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.memory_details.MemoryDetailsFragment" >
+    tools:context=".presentation.memory_details_fragment.MemoryDetailsFragment" >
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -133,13 +133,13 @@
                 tools:ignore="SmallSp" />
 
             <TextView
-                android:id="@+id/memoryDetailsThoughtsLabel"
+                android:id="@+id/memoryDetailsCommentsLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
-                android:text="@string/thoughtsLabel"
+                android:text="@string/comment_label"
                 android:textColor="#000000"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -186,7 +186,7 @@
                 android:layout_marginBottom="10dp"
 
                 android:src="@drawable/ic_baseline_add_24"
-                android:text="@string/add_a_comment_btn_label"
+                android:text="@string/add_comment_btn_label"
                 app:backgroundTint="#CACAC9"
                 app:shapeAppearanceOverlay="@style/add_new_button_style"
                 tools:ignore="RtlHardcoded,SpeakableTextPresentCheck" />

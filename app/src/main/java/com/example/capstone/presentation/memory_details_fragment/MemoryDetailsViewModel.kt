@@ -1,4 +1,4 @@
-package com.example.capstone.presentation.memory_details
+package com.example.capstone.presentation.memory_details_fragment
 
 import androidx.lifecycle.ViewModel
 

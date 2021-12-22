@@ -21,7 +21,7 @@ import com.example.capstone.domain.models.Memory
 
 class HomeFragment : Fragment() {
 
-    private val homeViewModel by lazy {
+    private val viewModel by lazy {
         ViewModelProvider(this)[HomeViewModel::class.java]
     }
 
@@ -37,37 +37,40 @@ class HomeFragment : Fragment() {
 
         binding.memoriesRv.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-            adapter = MemoriesAdapter(homeViewModel.memories)
+            adapter = MemoriesAdapter(viewModel.memories)
         }
-
         return binding.root
     }
 
-
-    private inner class MemoriesViewHolder(val binding: ImageListItemBinding): RecyclerView.ViewHolder(binding.root), View.OnClickListener{
+    private inner class MemoriesViewHolder(val binding: ImageListItemBinding) :
+        RecyclerView.ViewHolder(binding.root), View.OnClickListener {
 
         init {
             itemView.setOnClickListener(this)
+
+            binding.memoryDateTv.visibility = View.INVISIBLE
         }
 
         var memory = Memory()
-        fun bind(memory: Memory){
+        fun bind(memory: Memory) {
             this.memory = memory
             binding.memoryTitleTv.text = memory.title
         }
 
         override fun onClick(v: View?) {
-            when(v){
-                itemView ->{
+            when (v) {
+                itemView -> {
                     val navController = findNavController()
                     val name = bundleOf("name" to memory.title)
                     navController.navigate(R.id.action_homeFragment_to_memoryDetailsFragment, name)
                 }
             }
         }
+
     }
 
-    private inner class MemoriesAdapter(val memories: List<Memory>): RecyclerView.Adapter<MemoriesViewHolder>(){
+    private inner class MemoriesAdapter(val memories: List<Memory>) :
+        RecyclerView.Adapter<MemoriesViewHolder>() {
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MemoriesViewHolder {
             val binding = ImageListItemBinding.inflate(
                 layoutInflater,
@@ -83,6 +86,7 @@ class HomeFragment : Fragment() {
         }
 
         override fun getItemCount(): Int = memories.size
+
 
     }
 }

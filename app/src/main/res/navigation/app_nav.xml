@@ -16,11 +16,19 @@
     </fragment>
     <fragment
         android:id="@+id/memoryDetailsFragment"
-        android:name="com.example.capstone.presentation.memory_details.MemoryDetailsFragment"
+        android:name="com.example.capstone.presentation.memory_details_fragment.MemoryDetailsFragment"
         android:label="memory_details_fragment"
         tools:layout="@layout/memory_details_fragment" >
         <argument
             android:name="name"
             app:argType="string" />
+        <action
+            android:id="@+id/action_memoryDetailsFragment_to_addCommentFragment"
+            app:destination="@id/addCommentFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/addCommentFragment"
+        android:name="com.example.capstone.presentation.add_comment_fragment.AddCommentFragment"
+        android:label="add_comment_fragment"
+        tools:layout="@layout/add_comment_fragment" />
 </navigation>

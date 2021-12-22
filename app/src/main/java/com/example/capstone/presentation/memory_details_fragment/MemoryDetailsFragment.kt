@@ -1,4 +1,4 @@
-package com.example.capstone.presentation.memory_details
+package com.example.capstone.presentation.memory_details_fragment
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -6,12 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.findNavController
 import com.example.capstone.R
 import com.example.capstone.databinding.MemoryDetailsFragmentBinding
 
-class MemoryDetailsFragment : Fragment() {
+class MemoryDetailsFragment : Fragment(), View.OnClickListener {
 
-    private val memoryDetailsViewModel by lazy{
+    private val viewModel by lazy{
         ViewModelProvider(this)[MemoryDetailsViewModel::class.java]
     }
 
@@ -28,4 +30,17 @@ class MemoryDetailsFragment : Fragment() {
         return binding.root
     }
 
+    override fun onStart() {
+        super.onStart()
+        binding.addCommentBtn.setOnClickListener(this)
+    }
+
+    override fun onClick(v: View?) {
+        when(v){
+            binding.addCommentBtn -> {
+                val navController = findNavController()
+                navController.navigate(R.id.action_memoryDetailsFragment_to_addCommentFragment)
+            }
+        }
+    }
 }

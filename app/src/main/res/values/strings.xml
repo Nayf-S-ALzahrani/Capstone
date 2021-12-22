@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Capstone</string>
     <string name="date_label">Date:</string>
-    <string name="thoughtsLabel">Thoughts</string>
-    <string name="add_a_comment_btn_label">Add a comment</string>
+    <string name="comment_label">Comments</string>
+    <string name="add_comment_btn_label">Add comment</string>
+    <string name="new_comment_label">New Comment</string>
+    <string name="write_a_comment_placeholder">Write a comment</string>
+    <string name="or_label">OR</string>
+    <string name="save_comment_btn_label">Save Comment</string>
 </resources>
