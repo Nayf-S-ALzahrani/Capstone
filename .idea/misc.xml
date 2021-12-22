@@ -15,9 +15,9 @@
         <entry key="app/src/main/res/drawable/like_selector.xml" value="0.2638888888888889" />
         <entry key="app/src/main/res/drawable/memory_card_corner_radius.xml" value="0.2638888888888889" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3098958333333333" />
-        <entry key="app/src/main/res/layout/home_fragment.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/image_list_item.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/memory_details_fragment.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/home_fragment.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/image_list_item.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/memory_details_fragment.xml" value="0.25" />
       </map>
     </option>
   </component>

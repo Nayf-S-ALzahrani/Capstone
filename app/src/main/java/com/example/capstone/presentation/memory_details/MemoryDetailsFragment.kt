@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.capstone.R
+import com.example.capstone.databinding.MemoryDetailsFragmentBinding
 
 class MemoryDetailsFragment : Fragment() {
 
@@ -14,11 +15,17 @@ class MemoryDetailsFragment : Fragment() {
         ViewModelProvider(this)[MemoryDetailsViewModel::class.java]
     }
 
+    private lateinit var binding: MemoryDetailsFragmentBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.memory_details_fragment, container, false)
+
+        binding = MemoryDetailsFragmentBinding.inflate(layoutInflater)
+
+        binding.memoryDetailsTitleTv.text = arguments?.getString("name")
+        binding.memoryDetailsImgV.setImageDrawable(resources.getDrawable(R.drawable.ic_launcher_foreground))
+        return binding.root
     }
 
 }

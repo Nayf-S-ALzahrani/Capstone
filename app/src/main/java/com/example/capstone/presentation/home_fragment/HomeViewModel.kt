@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import com.example.capstone.domain.models.Memory
 
 class HomeViewModel : ViewModel() {
-
+    // TODO: Implement the ViewModel
     val memories = listOf<Memory>(
         Memory(title = "test 1"),
         Memory(title ="test 2"),
