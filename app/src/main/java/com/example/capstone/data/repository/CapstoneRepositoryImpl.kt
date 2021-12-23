@@ -1,4 +1,6 @@
 package com.example.capstone.data.repository
 
-class CapstoneRepositoryImpl {
+import javax.inject.Inject
+
+class CapstoneRepositoryImpl() {
 }

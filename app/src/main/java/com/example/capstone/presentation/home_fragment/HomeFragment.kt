@@ -35,6 +35,7 @@ class HomeFragment : Fragment() {
         val snapHelper: SnapHelper = LinearSnapHelper()
         snapHelper.attachToRecyclerView(binding.memoriesRv)
 
+
         binding.memoriesRv.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             adapter = MemoriesAdapter(viewModel.memories)

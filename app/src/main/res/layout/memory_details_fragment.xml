@@ -70,7 +70,7 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/memoryDetailsDateTv"
+                    android:id="@+id/memoryDetailsDateTxtV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -100,7 +100,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/memoryDetailsLocationTv"
+                    android:id="@+id/memoryDetailsLocationTxtV"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -145,7 +145,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/writtenThoughtsTv"
+                android:id="@+id/commentTxtV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"

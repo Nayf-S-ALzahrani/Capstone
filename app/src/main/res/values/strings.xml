@@ -7,4 +7,16 @@
     <string name="write_a_comment_placeholder">Write a comment</string>
     <string name="or_label">OR</string>
     <string name="save_comment_btn_label">Save Comment</string>
+    <string name="email_label">Email</string>
+    <string name="enter_your_email_placeholder">Enter your email</string>
+    <string name="password_label">Password</string>
+    <string name="enter_your_password_placeholder">Enter your password</string>
+    <string name="forgot_password_label">Forgot Password?</string>
+    <string name="login_btn_label">Login</string>
+    <string name="don_t_have_an_account_label">Don\'t have an account?</string>
+    <string name="sign_up_txt_label">Sign up</string>
+    <string name="register_name_label">Name</string>
+    <string name="confirm_password_label">Confirm Password</string>
+    <string name="already_have_an_account_label">Already have an account?</string>
+    <string name="login_label">Login</string>
 </resources>
