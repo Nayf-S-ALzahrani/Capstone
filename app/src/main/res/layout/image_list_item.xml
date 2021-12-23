@@ -8,13 +8,13 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/memoryImageImageView"
+        android:id="@+id/memoryImageImgV"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
         android:background="@drawable/memory_card_corner_radius"
         android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,10 +33,10 @@
         android:alpha="0.5"
 
         android:background="@drawable/card_title_view_corners_radius"
-        app:layout_constraintBottom_toBottomOf="@+id/memoryImageImageView"
-        app:layout_constraintEnd_toEndOf="@+id/memoryImageImageView"
+        app:layout_constraintBottom_toBottomOf="@+id/memoryImageImgV"
+        app:layout_constraintEnd_toEndOf="@+id/memoryImageImgV"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/memoryImageImageView" />
+        app:layout_constraintStart_toStartOf="@+id/memoryImageImgV" />
 
     <TextView
         android:id="@+id/memoryTitleTv"
@@ -47,24 +47,24 @@
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/memoryImageImageView"
+        app:layout_constraintBottom_toBottomOf="@+id/memoryImageImgV"
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toTopOf="@+id/view" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/memoryDateTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:text="20/20/2020"
         android:textColor="#000000"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/memoryImageImageView"
+        app:layout_constraintBottom_toBottomOf="@+id/memoryImageImgV"
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintTop_toTopOf="@+id/view" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/notifyImgBtn"
         android:layout_width="30sp"
         android:layout_height="30sp"
         android:layout_marginTop="20dp"
@@ -75,21 +75,21 @@
         android:minWidth="48dp"
         android:minHeight="48dp"
         android:scaleType="fitXY"
-        app:layout_constraintEnd_toEndOf="@+id/memoryImageImageView"
-        app:layout_constraintTop_toTopOf="@+id/memoryImageImageView"
+        app:layout_constraintEnd_toEndOf="@+id/memoryImageImgV"
+        app:layout_constraintTop_toTopOf="@+id/memoryImageImgV"
         app:srcCompat="@drawable/ic_baseline_notifications_24"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/likecheckBox"
         style="@style/LikesCheckBox"
         android:layout_width="30sp"
         android:layout_height="30sp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="20dp"
         android:gravity="center"
-        app:layout_constraintEnd_toEndOf="@+id/memoryImageImageView"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton"
+        app:layout_constraintEnd_toEndOf="@+id/memoryImageImgV"
+        app:layout_constraintTop_toBottomOf="@+id/notifyImgBtn"
         tools:ignore="TouchTargetSizeCheck" />
 
 

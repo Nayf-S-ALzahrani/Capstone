@@ -1,10 +1,10 @@
-package com.example.capstone.homeFragment
+package com.example.capstone.presentation.home_fragment
 
 import androidx.lifecycle.ViewModel
-import com.example.capstone.models.Memory
+import com.example.capstone.domain.models.Memory
 
 class HomeViewModel : ViewModel() {
-
+    // TODO: Implement the ViewModel
     val memories = listOf<Memory>(
         Memory(title = "test 1"),
         Memory(title ="test 2"),
