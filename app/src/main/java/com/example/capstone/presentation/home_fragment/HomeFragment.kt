@@ -16,6 +16,8 @@ import androidx.recyclerview.widget.SnapHelper
 import com.example.capstone.R
 import com.example.capstone.databinding.HomeFragmentBinding
 import com.example.capstone.databinding.ImageListItemBinding
+import com.example.capstone.databinding.VideoListItemBinding
+import com.example.capstone.databinding.VoiceNoteListItemBinding
 import com.example.capstone.domain.models.Memory
 
 
@@ -49,7 +51,7 @@ class HomeFragment : Fragment() {
         init {
             itemView.setOnClickListener(this)
 
-            binding.memoryDateTv.visibility = View.INVISIBLE
+//            binding.memoryDateTv.visibility = View.INVISIBLE
         }
 
         var memory = Memory()
