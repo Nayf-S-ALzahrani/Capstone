@@ -8,8 +8,7 @@ data class Memory(
     val imageUrl: String = "",
     val date: Date? = Date(),
     val description: String = "",
-
-
+    val type: String = ""
     )
 
 
