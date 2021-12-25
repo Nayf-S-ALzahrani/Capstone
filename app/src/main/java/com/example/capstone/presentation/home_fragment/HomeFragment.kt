@@ -21,6 +21,7 @@ import com.example.capstone.databinding.ImageListItemBinding
 import com.example.capstone.databinding.VideoListItemBinding
 import com.example.capstone.databinding.VoiceNoteListItemBinding
 import com.example.capstone.domain.models.Memory
+import com.littlemango.stacklayoutmanager.StackLayoutManager
 
 
 class HomeFragment : Fragment() {
@@ -39,14 +40,23 @@ class HomeFragment : Fragment() {
         val snapHelper: SnapHelper = LinearSnapHelper()
         snapHelper.attachToRecyclerView(binding.memoriesRv)
 
+        val stackLayoutManager = StackLayoutManager(StackLayoutManager.ScrollOrientation.RIGHT_TO_LEFT)
 
         binding.memoriesRv.apply {
-            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+
+            layoutManager = stackLayoutManager
             adapter = MemoriesAdapter(viewModel.memories)
         }
+
         return binding.root
     }
 
+    override fun onStart() {
+        super.onStart()
+        binding.addNewFab.setOnClickListener {
+            binding.memoriesRv.smoothScrollToPosition(0)
+        }
+    }
     private inner class MemoriesImageViewHolder(val binding: ImageListItemBinding) :
         RecyclerView.ViewHolder(binding.root), View.OnClickListener {
 
