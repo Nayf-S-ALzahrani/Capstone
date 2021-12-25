@@ -13,7 +13,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SnapHelper
+import androidx.viewbinding.ViewBinding
 import com.example.capstone.R
+import com.example.capstone.common.Constants
 import com.example.capstone.databinding.HomeFragmentBinding
 import com.example.capstone.databinding.ImageListItemBinding
 import com.example.capstone.databinding.VideoListItemBinding
@@ -45,13 +47,12 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
-    private inner class MemoriesViewHolder(val binding: ImageListItemBinding) :
+    private inner class MemoriesImageViewHolder(val binding: ImageListItemBinding) :
         RecyclerView.ViewHolder(binding.root), View.OnClickListener {
 
         init {
             itemView.setOnClickListener(this)
 
-//            binding.memoryDateTv.visibility = View.INVISIBLE
         }
 
         var memory = Memory()
@@ -72,24 +73,116 @@ class HomeFragment : Fragment() {
 
     }
 
-    private inner class MemoriesAdapter(val memories: List<Memory>) :
-        RecyclerView.Adapter<MemoriesViewHolder>() {
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MemoriesViewHolder {
-            val binding = ImageListItemBinding.inflate(
-                layoutInflater,
-                parent,
-                false
-            )
-            return MemoriesViewHolder(binding)
+    private inner class MemoriesVoiceNoteViewHolder(val binding: VoiceNoteListItemBinding) :
+        RecyclerView.ViewHolder(binding.root), View.OnClickListener {
+
+        init {
+            itemView.setOnClickListener(this)
+
         }
 
-        override fun onBindViewHolder(holder: MemoriesViewHolder, position: Int) {
+        var memory = Memory()
+        fun bind(memory: Memory) {
+            this.memory = memory
+            binding.memoryTitleTv.text = memory.title
+        }
+
+        override fun onClick(v: View?) {
+            when (v) {
+                itemView -> {
+                    val navController = findNavController()
+                    val name = bundleOf("name" to memory.title)
+                    navController.navigate(R.id.action_homeFragment_to_memoryDetailsFragment, name)
+                }
+            }
+        }
+
+    }
+
+    private inner class MemoriesVideoViewHolder(val binding: VideoListItemBinding) :
+        RecyclerView.ViewHolder(binding.root), View.OnClickListener {
+
+        init {
+            itemView.setOnClickListener(this)
+
+        }
+
+        var memory = Memory()
+        fun bind(memory: Memory) {
+            this.memory = memory
+            binding.memoryTitleTv.text = memory.title
+        }
+
+        override fun onClick(v: View?) {
+            when (v) {
+                itemView -> {
+                    val navController = findNavController()
+                    val name = bundleOf("name" to memory.title)
+                    navController.navigate(R.id.action_homeFragment_to_memoryDetailsFragment, name)
+                }
+            }
+        }
+
+    }
+    private inner class MemoriesAdapter(val memories: List<Memory>) :
+        RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+            return when(viewType){
+                R.layout.image_list_item ->{
+                    val binding = ImageListItemBinding.inflate(
+                        layoutInflater,
+                        parent,
+                        false
+                    )
+                    MemoriesImageViewHolder(binding)
+                }
+                R.layout.voice_note_list_item -> {
+                    val binding = VoiceNoteListItemBinding.inflate(
+                        layoutInflater,
+                        parent,
+                        false
+                    )
+                    MemoriesVoiceNoteViewHolder(binding)
+                }
+                R.layout.video_list_item -> {
+                    val binding = VideoListItemBinding.inflate(
+                        layoutInflater,
+                        parent,
+                        false
+                    )
+                    MemoriesVideoViewHolder(binding)
+                }
+                else -> throw IllegalArgumentException("unknown view type $viewType")
+            }
+
+        }
+
+        override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
             val memory = memories[position]
-            holder.bind(memory)
+            when(holder){
+                is MemoriesImageViewHolder -> {
+                    holder.bind(memory)
+                }
+                is MemoriesVoiceNoteViewHolder -> {
+                    holder.bind(memory)
+                }
+                is MemoriesVideoViewHolder -> {
+                    holder.bind(memory)
+                }
+                else -> throw IllegalArgumentException("unknown holder at position: $position")
+            }
+        }
+
+        override fun getItemViewType(position: Int): Int {
+            return when (memories[position].type) {
+                Constants.IMAGE_MEMORY -> R.layout.image_list_item
+                Constants.VOICE_NOTE_MEMORY -> R.layout.voice_note_list_item
+                Constants.VIDEO_MEMORY -> R.layout.video_list_item
+                else -> throw IllegalArgumentException("unknown view type at position: $position")
+            }
         }
 
         override fun getItemCount(): Int = memories.size
-
 
     }
 }
