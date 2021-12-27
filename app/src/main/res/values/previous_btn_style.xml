@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="previous_btn_style">
+        <item name="cornerRadius">10sp</item>
+        <item name="cornerSize">50%</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="android:width">200sp</item>
+
+    </style>
+</resources>

@@ -19,4 +19,17 @@
     <string name="confirm_password_label">Confirm Password</string>
     <string name="already_have_an_account_label">Already have an account?</string>
     <string name="login_label">Login</string>
+    <string name="memories_collection_label">Memories Collection</string>
+    <string name="one_memory_label">One Memory</string>
+    <string name="image_memory_imgView_label">Image</string>
+    <string name="video_memory_imgView_label">Video</string>
+    <string name="voice_note_memory_imgView_label">Voice Note</string>
+    <string name="upload_image_video_label">Upload Image/Video</string>
+    <string name="memory_title_label">Memory Title</string>
+    <string name="when_was_this_memory_label">When Was This Memory</string>
+    <string name="write_a_comment_label">Write A Comment?</string>
+    <string name="where_was_it_label">Where Was It</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="collection_name_label">Collection Name</string>
 </resources>
