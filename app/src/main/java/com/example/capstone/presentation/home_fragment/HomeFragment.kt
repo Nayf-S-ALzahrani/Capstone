@@ -32,6 +32,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var binding: HomeFragmentBinding
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -54,7 +55,9 @@ class HomeFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         binding.addNewFab.setOnClickListener {
-            binding.memoriesRv.smoothScrollToPosition(0)
+//            binding.memoriesRv.smoothScrollToPosition(0)
+            val navController = findNavController()
+            navController.navigate(R.id.action_homeFragment_to_oneOrCollectionFragment)
         }
     }
     private inner class MemoriesImageViewHolder(val binding: ImageListItemBinding) :

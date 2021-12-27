@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_homeFragment_to_syncingFragment"
             app:destination="@id/syncingFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_oneOrCollectionFragment"
+            app:destination="@id/navigation" />
     </fragment>
     <fragment
         android:id="@+id/memoryDetailsFragment"
@@ -54,4 +57,50 @@
         android:name="com.example.capstone.presentation.syncing_fragment.SyncingFragment"
         android:label="syncing_fragment"
         tools:layout="@layout/syncing_fragment" />
+    <navigation android:id="@+id/navigation"
+        app:startDestination="@id/oneOrCollectionFragment">
+        <fragment
+            android:id="@+id/oneOrCollectionFragment"
+            android:name="com.example.capstone.presentation.feature_new_memory.oneOrCollectionFragment.OneOrCollectionFragment"
+            android:label="fragment_one_or_collection"
+            tools:layout="@layout/fragment_one_or_collection">
+            <action
+                android:id="@+id/action_oneOrCollectionFragment_to_memoryMediaFragment"
+                app:destination="@id/memoryMediaFragment" />
+            <action
+                android:id="@+id/action_oneOrCollectionFragment_to_categoryNameFragment"
+                app:destination="@id/categoryNameFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/memoryMediaFragment"
+            android:name="com.example.capstone.presentation.feature_new_memory.memoryMediaFragment.MemoryMediaFragment"
+            android:label="fragment_memory_media"
+            tools:layout="@layout/fragment_memory_media">
+            <action
+                android:id="@+id/action_memoryMediaFragment_to_newImageVideoMemoryFragment"
+                app:destination="@id/newMemoryFragment" />
+            <action
+                android:id="@+id/action_memoryMediaFragment_to_newVoiceNoteMemoryFragment"
+                app:destination="@id/newVoiceNoteMemoryFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/newMemoryFragment"
+            android:name="com.example.capstone.presentation.feature_new_memory.newImageVideoMemoryFragment.NewImageVideoMemoryFragment"
+            android:label="new_image_video_memory_fragment"
+            tools:layout="@layout/new_image_video_memory_fragment" />
+        <fragment
+            android:id="@+id/categoryNameFragment"
+            android:name="com.example.capstone.presentation.feature_new_memory.collectionNameFragment.CategoryNameFragment"
+            android:label="fragment_category_name"
+            tools:layout="@layout/fragment_category_name">
+            <action
+                android:id="@+id/action_categoryNameFragment_to_memoryMediaFragment"
+                app:destination="@id/memoryMediaFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/newVoiceNoteMemoryFragment"
+            android:name="com.example.capstone.presentation.feature_new_memory.newVoiceNoteMemoryFragment.NewVoiceNoteMemoryFragment"
+            android:label="fragment_new_voice_note_memory"
+            tools:layout="@layout/fragment_new_voice_note_memory" />
+    </navigation>
 </navigation>
