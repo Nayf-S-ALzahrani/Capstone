@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.add_comment_fragment.AddCommentFragment">
+    tools:context=".presentation.feature_Add_comment.AddCommentFragment">
 
     <TextView
         android:id="@+id/textView2"
@@ -48,7 +48,7 @@
         app:layout_constraintTop_toBottomOf="@+id/newCommentEdtTxt" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/recordImgBtn"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginTop="40dp"

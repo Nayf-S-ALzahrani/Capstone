@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.memory_details_fragment.MemoryDetailsFragment" >
+    tools:context=".presentation.feature_Memory_details.MemoryDetailsFragment" >
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -25,9 +25,8 @@
                 android:id="@+id/memoryDetailsImgV"
                 android:layout_width="match_parent"
                 android:layout_height="550sp"
-                android:background="@color/gray"
                 tools:ignore="ImageContrastCheck"
-                tools:srcCompat="@drawable/ic_launcher_foreground"
+                android:background="@color/gray"
                 android:contentDescription="TODO" />
 
             <TextView

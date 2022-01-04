@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.capstone.presentation.home_fragment.HomeFragment"
+        android:name="com.example.capstone.presentation.feature_Home.HomeFragment"
         android:label="home_fragment"
         tools:layout="@layout/home_fragment" >
         <action
@@ -15,20 +15,17 @@
             app:destination="@id/memoryDetailsFragment" />
         <action
             android:id="@+id/action_homeFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_registerFragment"
-            app:destination="@id/registerFragment" />
+            app:destination="@id/authNavigation" />
         <action
             android:id="@+id/action_homeFragment_to_syncingFragment"
             app:destination="@id/syncingFragment" />
         <action
             android:id="@+id/action_homeFragment_to_oneOrCollectionFragment"
-            app:destination="@id/navigation" />
+            app:destination="@id/newMemoryNavigation" />
     </fragment>
     <fragment
         android:id="@+id/memoryDetailsFragment"
-        android:name="com.example.capstone.presentation.memory_details_fragment.MemoryDetailsFragment"
+        android:name="com.example.capstone.presentation.feature_Memory_details.MemoryDetailsFragment"
         android:label="memory_details_fragment"
         tools:layout="@layout/memory_details_fragment" >
         <argument
@@ -40,28 +37,19 @@
     </fragment>
     <fragment
         android:id="@+id/addCommentFragment"
-        android:name="com.example.capstone.presentation.add_comment_fragment.AddCommentFragment"
+        android:name="com.example.capstone.presentation.feature_Add_comment.AddCommentFragment"
         android:label="add_comment_fragment"
         tools:layout="@layout/add_comment_fragment" />
     <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.capstone.presentation.login_fragment.LoginFragment"
-        android:label="login_fragment"
-        tools:layout="@layout/login_fragment" />
-    <fragment
-        android:id="@+id/registerFragment"
-        android:name="com.example.capstone.presentation.register_fragment.RegisterFragment"
-        android:label="RegisterFragment" />
-    <fragment
         android:id="@+id/syncingFragment"
-        android:name="com.example.capstone.presentation.syncing_fragment.SyncingFragment"
+        android:name="com.example.capstone.presentation.feature_Syncing_jewllery.SyncingFragment"
         android:label="syncing_fragment"
         tools:layout="@layout/syncing_fragment" />
-    <navigation android:id="@+id/navigation"
+    <navigation android:id="@+id/newMemoryNavigation"
         app:startDestination="@id/oneOrCollectionFragment">
         <fragment
             android:id="@+id/oneOrCollectionFragment"
-            android:name="com.example.capstone.presentation.feature_new_memory.oneOrCollectionFragment.OneOrCollectionFragment"
+            android:name="com.example.capstone.presentation.feature_New_memory.oneOrCollectionFragment.OneOrCollectionFragment"
             android:label="fragment_one_or_collection"
             tools:layout="@layout/fragment_one_or_collection">
             <action
@@ -73,7 +61,7 @@
         </fragment>
         <fragment
             android:id="@+id/memoryMediaFragment"
-            android:name="com.example.capstone.presentation.feature_new_memory.memoryMediaFragment.MemoryMediaFragment"
+            android:name="com.example.capstone.presentation.feature_New_memory.memoryMediaFragment.MemoryMediaFragment"
             android:label="fragment_memory_media"
             tools:layout="@layout/fragment_memory_media">
             <action
@@ -82,15 +70,23 @@
             <action
                 android:id="@+id/action_memoryMediaFragment_to_newVoiceNoteMemoryFragment"
                 app:destination="@id/newVoiceNoteMemoryFragment" />
+            <argument
+                android:name="categoryName"
+                app:argType="string"
+                android:defaultValue="null" />
         </fragment>
         <fragment
             android:id="@+id/newMemoryFragment"
-            android:name="com.example.capstone.presentation.feature_new_memory.newImageVideoMemoryFragment.NewImageVideoMemoryFragment"
+            android:name="com.example.capstone.presentation.feature_New_memory.newImageVideoMemoryFragment.NewImageVideoMemoryFragment"
             android:label="new_image_video_memory_fragment"
-            tools:layout="@layout/new_image_video_memory_fragment" />
+            tools:layout="@layout/new_image_video_memory_fragment" >
+            <argument
+                android:name="mediaType"
+                app:argType="string" />
+        </fragment>
         <fragment
             android:id="@+id/categoryNameFragment"
-            android:name="com.example.capstone.presentation.feature_new_memory.collectionNameFragment.CategoryNameFragment"
+            android:name="com.example.capstone.presentation.feature_New_memory.collectionNameFragment.CategoryNameFragment"
             android:label="fragment_category_name"
             tools:layout="@layout/fragment_category_name">
             <action
@@ -99,8 +95,24 @@
         </fragment>
         <fragment
             android:id="@+id/newVoiceNoteMemoryFragment"
-            android:name="com.example.capstone.presentation.feature_new_memory.newVoiceNoteMemoryFragment.NewVoiceNoteMemoryFragment"
+            android:name="com.example.capstone.presentation.feature_New_memory.newVoiceNoteMemoryFragment.NewVoiceNoteMemoryFragment"
             android:label="fragment_new_voice_note_memory"
             tools:layout="@layout/fragment_new_voice_note_memory" />
+    </navigation>
+    <navigation android:id="@+id/authNavigation"
+        app:startDestination="@id/loginFragment">
+        <fragment
+            android:id="@+id/registerFragment"
+            android:name="com.example.capstone.presentation.feature_Authintication.feature_register.RegisterFragment"
+            android:label="RegisterFragment"/>
+        <fragment
+            android:id="@+id/loginFragment"
+            android:name="com.example.capstone.presentation.feature_Authintication.feature_Login.LoginFragment"
+            android:label="login_fragment"
+            tools:layout="@layout/login_fragment">
+            <action
+                android:id="@+id/action_loginFragment_to_registerFragment"
+                app:destination="@id/registerFragment" />
+        </fragment>
     </navigation>
 </navigation>

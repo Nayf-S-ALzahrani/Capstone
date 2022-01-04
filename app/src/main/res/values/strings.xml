@@ -29,7 +29,10 @@
     <string name="when_was_this_memory_label">When Was This Memory</string>
     <string name="write_a_comment_label">Write A Comment?</string>
     <string name="where_was_it_label">Where Was It</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="collection_name_label">Collection Name</string>
+    <string name="collection_name_empty_snackBar_msg">Category name cannot be empty.</string>
+    <string name="snackBar_dismiss_label">Dismiss</string>
+    <string name="init_timer">00:00</string>
+    <string name="unsuccessfulMessage">Something went wrong, please try again later :)</string>
+    <string name="password_rules">&#8226; Password minimum length 8. \n&#8226; Has one uppercase. \n&#8226; Has numbers. \n&#8226; One special character(@#$%^&amp;+=!).</string>
 </resources>
